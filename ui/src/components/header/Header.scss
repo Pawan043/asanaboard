@@ -1,0 +1,51 @@
+@import '../app/Variables.scss';
+@import '../app/Mixins.scss';
+
+.header {
+  width: 100%;
+  z-index: 10;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $shadow-2;
+
+  h1 {
+    margin: 0;
+    padding: 25px 10px 27px 10px;
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: 700;
+
+    a {
+      color: inherit !important;
+      text-decoration: none;
+    }
+  }
+
+  .avatars {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0 20px;
+    pointer-events: none;
+
+    .avatar {
+      border: 2px solid white;
+      overflow: hidden;
+      margin-left: -8px;
+    }
+  }
+
+  @include phone {
+    justify-content: flex-start;
+
+    h1 {
+      padding-left: 20px;
+    }
+  }
+}

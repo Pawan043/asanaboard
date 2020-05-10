@@ -1,0 +1,119 @@
+@import './Variables.scss';
+
+body {
+  font-family: $font-1;
+  font-size: 16px;
+  color: $text-1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $bg-1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+html.wf-loading {
+  #root {
+    display: none;
+  }
+}
+
+.icon .fill {
+  fill: $text-2;
+  transition: fill 100ms;
+}
+
+button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: none;
+  outline: none;
+  background-color: white;
+  font-size: 16px;
+  font-family: $font-1;
+  line-height: 1.2;
+  border-radius: 4px;
+  transition: all 100ms;
+
+  &:hover:not(:disabled),
+  &:focus,
+  &:active {
+    background-color: $white-hover-2;
+
+    .icon .fill {
+      fill: darken($text-2, 8%);
+    }
+  }
+
+  &.raised {
+    box-shadow: $shadow-2;
+
+    &:hover:not(:disabled),
+    &:focus,
+    &:active {
+      background-color: $white-hover;
+      box-shadow: $shadow-2-hover;
+    }
+  }
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-size: contain;
+
+  &.bean {
+    background-image: url('../../assets/images/bean.png');
+  }
+
+  &.elfo {
+    background-image: url('../../assets/images/elfo.png');
+  }
+
+  &.sorcerio {
+    background-image: url('../../assets/images/sorcerio.png');
+  }
+}
+
+.task-board-overflow-container {
+  flex-grow: 1;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+a {
+  outline: none;
+}
+
+a:focus:not(:active) {
+  outline: 1px dashed transparentize($text-3, 0.5);
+  outline-offset: 4px;
+}
+
+input,
+textarea {
+  font-family: $font-1;
+  font-size: 16px;
+  color: $text-1;
+
+  &::placeholder {
+    color: $text-3;
+  }
+}
