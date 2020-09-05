@@ -11,7 +11,7 @@
     "@types/uuid": "^3.4.4",
     "@types/webfontloader": "^1.6.29",
     "gh-pages": "^2.0.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.8",
